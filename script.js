@@ -12,7 +12,6 @@ const countButton = document.querySelector("#submit");
 function startTimer() {
   let timer;
   function tick() {
-    // form.classList.add("hidden");
     const now = new Date();
     const differenceTime = (dateToCount - now) / 1000;
     const days = Math.trunc(differenceTime / (60 * 60 * 24));
@@ -45,6 +44,7 @@ function startTimer() {
   ) {
     alert("Fill inputs with future date");
   } else if (valueHours && valueDay && valueMonth && valueYear) {
+    form.classList.add("hidden");
     tick();
     timer = setInterval(tick, 1000);
   }

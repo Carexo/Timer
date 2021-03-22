@@ -11,7 +11,7 @@
   <body>
     <h1>Date Timer</h1>
     <main>
-      <form onsubmit="return false">
+      <form onsubmit="return false" class="hidden">
         <h2>Enter date of the event</h2>
         <div class="date-inputs">
           <div class="input-group">
@@ -54,6 +54,27 @@
         </div>
         <input id="submit" type="submit" name="sumbit" value="Count" />
       </form>
+      <section class="counter-container">
+        <h2>The event will be in:</h2>
+        <div class="counter">
+          <div class="time">
+            <h3>Days</h3>
+            <p class="days">12</p>
+          </div>
+          <div class="time">
+            <h3>Hours</h3>
+            <p class="hours">03</p>
+          </div>
+          <div class="time">
+            <h3>Minutes</h3>
+            <p class="minutes">55</p>
+          </div>
+          <div class="time">
+            <h3>Seconds</h3>
+            <p class="seconds">12</p>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="script.js" async defer></script>
   </body>
