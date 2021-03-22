@@ -121,6 +121,14 @@ input::-webkit-inner-spin-button {
   background: #048243;
   width: 85%;
   height: 50%;
+
+  /* hidding scrollbars */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.counter::-webkit-scrollbar {
+  display: none;
 }
 
 .time {
@@ -130,6 +138,7 @@ input::-webkit-inner-spin-button {
   background: rgba(0, 0, 0, 0.3);
   width: 15%;
   height: 35%;
+  min-width: 6rem;
   min-height: 4.3rem;
 }
 
@@ -141,3 +150,80 @@ input::-webkit-inner-spin-button {
   margin-top: 0.3rem;
   font-size: 1.1rem;
 }
+
+@media only screen and (max-width: 1200px) {
+  form {
+    width: 70vw;
+  }
+  .counter-container {
+    width: 90vw;
+  }
+
+  .time h3 {
+    font-size: 1.1rem;
+  }
+
+  .time p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  form {
+    width: 85vw;
+  }
+
+  .counter-container {
+    width: 90vw;
+  }
+
+  .counter {
+    width: 85%;
+    height: 50%;
+    padding: 0rem 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  form {
+    height: 70vh;
+    min-height: 30rem;
+  }
+
+  .date-inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group {
+    margin-top: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .counter-container {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .counter {
+    flex-wrap: wrap;
+
+    width: 85%;
+    height: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .time {
+    margin-top: 0.7rem;
+  }
+} ;

@@ -24,7 +24,6 @@ function startTimer() {
     const hours = Math.trunc((differenceTime / (60 * 60)) % 24);
     const minutes = Math.trunc((differenceTime / 60) % 60);
     const seconds = Math.trunc(differenceTime % 60);
-    console.log(differenceTime, days, hours, minutes, seconds);
     appearEvenCounter(days, hours, minutes, seconds);
 
     if (Math.trunc(differenceTime) === 0) {
