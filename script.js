@@ -14,13 +14,15 @@ const inputYear = document.querySelector("#year");
 const inputHours = document.querySelector("#hours");
 
 const countButton = document.querySelector("#submit");
+const restartButton = document.querySelector(".restart");
+
+let timer;
 
 function checkBetween(num, min, max) {
   return num >= min && num <= max;
 }
 
 function startTimer() {
-  let timer;
   function tick() {
     const now = new Date();
     const differenceTime = (dateToCount - now) / 1000;
@@ -81,7 +83,16 @@ function appearEvenCounter(days, hours, minutes, seconds) {
   secondsElement.textContent = addPading(seconds);
 }
 
-const dateToCount = new Date(2021, 2, 0, 12);
-console.log(dateToCount);
-console.log(checkBetween(22, 1, 24) && checkBetween(21, 1, 24));
+function restartTimer() {
+  clearInterval(timer);
+  form.classList.remove("hidden");
+  eventCounter.classList.add("hidden");
+
+  inputDay.value = "";
+  inputMonth.value = "";
+  inputYear.value = "";
+  inputHours.value = "";
+}
+
 countButton.addEventListener("click", startTimer);
+restartButton.addEventListener("click", restartTimer);
