@@ -1,5 +1,7 @@
 "use strict";
 
+const form = document.querySelector("form");
+
 const inputDay = document.querySelector("#day");
 const inputMonth = document.querySelector("#month");
 const inputYear = document.querySelector("#year");
@@ -8,7 +10,9 @@ const inputHours = document.querySelector("#hours");
 const countButton = document.querySelector("#submit");
 
 function startTimer() {
+  let timer;
   function tick() {
+    // form.classList.add("hidden");
     const now = new Date();
     const differenceTime = (dateToCount - now) / 1000;
     const days = Math.trunc(differenceTime / (60 * 60 * 24));
@@ -30,7 +34,7 @@ function startTimer() {
   const dateToCount = new Date(valueYear, valueMonth, valueDay, valueHours);
 
   //testing
-  //   const dateToCount = new Date(2021, 2, 22, 16, 32, 55);
+  //   const dateToCount = new Date(2021, 2, 22, 17, 23, 5);
 
   if (
     valueHours &&
@@ -40,10 +44,10 @@ function startTimer() {
     dateToCount - new Date() < 0
   ) {
     alert("Fill inputs with future date");
-    return 0;
+  } else if (valueHours && valueDay && valueMonth && valueYear) {
+    tick();
+    timer = setInterval(tick, 1000);
   }
-  tick();
-  const timer = setInterval(tick, 1000);
 }
 
 countButton.addEventListener("click", startTimer);
