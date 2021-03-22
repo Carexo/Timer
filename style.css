@@ -31,8 +31,8 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30vw;
-  height: 20vh;
+  width: 40vw;
+  height: 30vh;
 }
 
 .date-inputs {
